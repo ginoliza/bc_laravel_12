@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareaController;
-
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,5 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/tareas/{tarea}/toggle', [TareaController::class, 'toggle'])->name('tareas.toggle');
 });
 
-
 require __DIR__.'/auth.php';
+
+Route::resource('categorias', CategoriaController::class);
