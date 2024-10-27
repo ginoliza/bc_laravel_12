@@ -12,7 +12,9 @@
         <ul class="list-disc pl-5 space-y-2">
             @foreach ($tareas as $tarea)
                 <li class="flex justify-between items-center bg-gray-100 px-4 py-2 rounded-lg">
+                    <!-- nombre de la tarea -->
                     <span>{{ $tarea->descripcion }}</span>
+                    <!-- acciones -->
                     <div>
                         <a href="{{ route('tareas.edit', $tarea) }}" class="mr-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Editar</a>
                         <form action="{{ route('tareas.toggle', $tarea) }}" method="POST" style="display:inline;">
